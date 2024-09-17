@@ -29,7 +29,7 @@ namespace nepesseg
                 Nepesseg = int.Parse(adatok[2]);
             }
             Fovaros = adatok[3];
-            FovarosNepesseg = int.Parse(adatok[4]);
+            FovarosNepesseg = int.Parse(adatok[4])*1000;
         }
         
         public int Nepsuruseg()
@@ -38,6 +38,17 @@ namespace nepesseg
             ns = Nepesseg / Terulet;
 
             return ns;
+        }
+        public bool Meghaladja()
+        {
+            if(Nepesseg*0.3 <= FovarosNepesseg)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

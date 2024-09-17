@@ -56,6 +56,14 @@ namespace nepesseg
                 }
             }
             Console.WriteLine($"A harmadik legnépesebb ország: {orszagok[harmadikIndex].Orszagnev}, a lakosság {orszagok[harmadikIndex].Nepesseg} fő.");
+            Console.WriteLine("8. feladat - A következő országok lakosságának több mint 30%-a a fővárosban lakik:");
+            foreach (var o in orszagok)
+            {
+                if (o.Meghaladja())
+                {
+                    Console.WriteLine($"\t{o.Orszagnev} ({o.Fovaros})");
+                }
+            }
             Console.ReadKey();
         }
     }
