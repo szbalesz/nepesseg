@@ -19,16 +19,33 @@ namespace nepesseg
                 orszagok.Add(new Orszag(sr.ReadLine()));
             }
             Console.WriteLine("4. feladat");
-            Console.WriteLine($"A beolvasott országok száma: {orszagok.Count}");
+            Console.WriteLine($"A beolvasott országok száma: {orszagok.Count}.");
             Console.WriteLine();
             Console.WriteLine("5. feladat");
             foreach (var o in orszagok)
             {
                 if (o.Orszagnev == "Kína")
                 {
-                    Console.WriteLine($"Kína népsűrűsége: {o.Nepsuruseg()}");
+                    Console.WriteLine($"Kína népsűrűsége: {o.Nepsuruseg()} fő/km^2.");
                 }
             }
+            Console.WriteLine();
+            Console.WriteLine("6. feladat");
+            int kinaL = 0;
+            int indiaL = 0;
+            foreach (var o in orszagok)
+            {
+                if (o.Orszagnev == "Kína")
+                {
+                    kinaL = o.Nepesseg;
+                }
+                if(o.Orszagnev == "India")
+                {
+                    indiaL = o.Nepesseg;
+                }
+            }
+            Console.WriteLine($"Kinában a lakosság {kinaL-indiaL} fővel volt több.");
+            Console.WriteLine();
             Console.ReadKey();
         }
     }

@@ -16,7 +16,6 @@ namespace nepesseg
 
         public Orszag(string sor)
         {
-            Console.WriteLine(sor);
             string[] adatok = sor.Split(';');
             Orszagnev = adatok[0];
             Terulet = int.Parse(adatok[1]);
