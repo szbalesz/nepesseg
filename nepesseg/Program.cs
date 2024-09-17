@@ -18,6 +18,17 @@ namespace nepesseg
             {
                 orszagok.Add(new Orszag(sr.ReadLine()));
             }
+            Console.WriteLine("4. feladat");
+            Console.WriteLine($"A beolvasott országok száma: {orszagok.Count}");
+            Console.WriteLine();
+            Console.WriteLine("5. feladat");
+            foreach (var o in orszagok)
+            {
+                if (o.Orszagnev == "Kína")
+                {
+                    Console.WriteLine($"Kína népsűrűsége: {o.Nepsuruseg()}");
+                }
+            }
             Console.ReadKey();
         }
     }
