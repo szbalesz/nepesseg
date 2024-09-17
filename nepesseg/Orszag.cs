@@ -16,11 +16,21 @@ namespace nepesseg
 
         public Orszag(string sor)
         {
-            Orszagnev = sor.Split(';')[0];
-            Terulet = int.Parse(sor.Split(';')[1]);
-            Nepesseg = int.Parse(sor.Split(';')[2]);
-            Fovaros = sor.Split(';')[3];
-            FovarosNepesseg = int.Parse(sor.Split(';')[4]);
+            Console.WriteLine(sor);
+            string[] adatok = sor.Split(';');
+            Orszagnev = adatok[0];
+            Terulet = int.Parse(adatok[1]);
+            if (adatok[2].Contains("g"))
+            {
+                string ideiglenes = adatok[2];
+                Nepesseg = int.Parse(ideiglenes.Substring(0, ideiglenes.Length - 1))*10000;
+            }
+            else
+            {
+                Nepesseg = int.Parse(adatok[2]);
+            }
+            Fovaros = adatok[3];
+            FovarosNepesseg = int.Parse(adatok[4]);
         }
         
         public int Nepsuruseg()
