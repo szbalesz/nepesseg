@@ -46,6 +46,16 @@ namespace nepesseg
             }
             Console.WriteLine($"Kinában a lakosság {kinaL-indiaL} fővel volt több.");
             Console.WriteLine();
+            Console.WriteLine("7. feladat");
+            int harmadikIndex = 0;
+            for (int i = 0; i < orszagok.Count; i++)
+            {
+                if (orszagok[i].Orszagnev != "Kína" && orszagok[i].Orszagnev != "India" && orszagok[i].Nepesseg > orszagok[harmadikIndex].Nepesseg)
+                {
+                    harmadikIndex = i;
+                }
+            }
+            Console.WriteLine($"A harmadik legnépesebb ország: {orszagok[harmadikIndex].Orszagnev}, a lakosság {orszagok[harmadikIndex].Nepesseg} fő.");
             Console.ReadKey();
         }
     }
